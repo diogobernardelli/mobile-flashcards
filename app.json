@@ -23,7 +23,13 @@
       "**/*"
     ],
     "ios": {
-      "supportsTablet": true
-    }
+      "supportsTablet": true,
+      "bundleIdentifier": "org.udacifitness.exp"
+    },
+    "notification": {
+      "icon": "https://tylermcginnis.com/udacifitness-45.png"
+    },
+    "description": "The best triathlon tracker ever",
+    "githubUrl": "https://github.com/diogobernardelli/nanodegree_react"
   }
 }
