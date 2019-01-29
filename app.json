@@ -10,9 +10,9 @@
     ],
     "version": "1.0.0",
     "orientation": "portrait",
-    "icon": "./assets/icon-app.png",
+    "icon": "https://i.ibb.co/WtSGjG1/icon-app.png",
     "splash": {
-      "image": "./assets/splash-screen.png",
+      "image": "https://i.ibb.co/ngbH0H5/splash-screen.png",
       "resizeMode": "contain",
       "backgroundColor": "#2c3e50"
     },
@@ -22,14 +22,17 @@
     "assetBundlePatterns": [
       "**/*"
     ],
+    "android": {
+      "package": "org.udacifitness.exp"
+    },
     "ios": {
       "supportsTablet": true,
       "bundleIdentifier": "org.udacifitness.exp"
     },
     "notification": {
-      "icon": "https://tylermcginnis.com/udacifitness-45.png"
+      "icon": "https://i.ibb.co/WtSGjG1/icon-app.png"
     },
-    "description": "The best triathlon tracker ever",
-    "githubUrl": "https://github.com/diogobernardelli/nanodegree_react"
+    "description": "Mobile Flashcards is a Udacity's React Native application",
+    "githubUrl": "https://github.com/diogobernardelli/mobile-flashcards"
   }
 }
