@@ -1,13 +1,15 @@
 import React from 'react';
-import { StyleSheet, View, Platform } from 'react-native';
+import { View, Platform } from 'react-native';
 import { StackNavigator, TabNavigator } from 'react-navigation';
 import DeckList from './components/DeckList';
 import NewDeck from './components/NewDeck';
 import Deck from './components/Deck';
 import AddCard from './components/AddCard';
 import Quiz from './components/Quiz';
+import AppStatusBar from './components/AppStatusBar';
 import { Ionicons } from '@expo/vector-icons';
 import { colors } from './helpers/colors';
+import { styles } from './helpers/styles';
 import { createStore } from 'redux'
 import { Provider } from 'react-redux'
 import reducer from './reducers'
@@ -21,7 +23,8 @@ export default class App extends React.Component {
   render() {
     return (
       <Provider store={createStore(reducer)}>
-        <View style={{flex: 1}}>
+        <View style={styles.container}>
+          <AppStatusBar backgroundColor={colors.ASPHALT} barStyle="light-content" />
           <AppNavigation/>
         </View>
       </Provider>
@@ -51,7 +54,7 @@ const Tabs = TabNavigator({
       },
       style: {
           height: 56,
-          backgroundColor: Platform.OS === 'ios' ? colors.WHITE : colors.BLUE,
+          backgroundColor: Platform.OS === 'ios' ? colors.WHITE : colors.ASPHALT,
           shadowColor: 'rgba(0, 0, 0, 0.24)',
           shadowOffset: {
               width: 0,
@@ -75,7 +78,7 @@ const AppNavigation = StackNavigator({
       navigationOptions: {
           headerTintColor: colors.WHITE,
           headerStyle: {
-              backgroundColor: colors.BLUE,
+              backgroundColor: colors.ASPHALT,
           }
       }
   },
@@ -84,7 +87,7 @@ const AppNavigation = StackNavigator({
       navigationOptions: {
           headerTintColor: colors.WHITE,
           headerStyle: {
-              backgroundColor: colors.BLUE,
+              backgroundColor: colors.ASPHALT,
           }
       }
   },
@@ -93,17 +96,8 @@ const AppNavigation = StackNavigator({
       navigationOptions: {
           headerTintColor: colors.WHITE,
           headerStyle: {
-              backgroundColor: colors.BLUE,
+              backgroundColor: colors.ASPHALT,
           }
       }
   }
-});
-
-const styles = StyleSheet.create({
-  container: {
-      flex: 1,
-      backgroundColor: '#fff',
-      alignItems: 'center',
-      justifyContent: 'center',
-  },
 });
