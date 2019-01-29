@@ -1,57 +1,65 @@
 import React, { Component } from 'react';
-import { Animated, Text, TouchableOpacity, Image } from 'react-native';
+import { Animated, Easing, Text, TouchableOpacity, Image } from 'react-native';
 import { styles } from '../helpers/styles';
 import { colors } from '../helpers/colors';
 
 export default class DeckListItem extends Component {
   state = {
-    rotateX: new Animated.Value(0),
-    opacity: new Animated.Value(1)
+    paddingTop: new Animated.Value(0),
+    paddingBottom: new Animated.Value(0),
+    marginLeft: new Animated.Value(200),
+    opacity: new Animated.Value(0)
   };
 
-  deckSelected(title) {
+  componentDidMount() {
+    const { marginLeft, opacity } = this.state;
+    const {item} = this.props;
+    
     Animated.parallel([
-      Animated.timing(this.state.rotateX, {
-          toValue: 360,
-          duration: 750
-      })
+      Animated.timing(marginLeft, {toValue: 0, delay: item.itemIndex * 100, easing: Easing.elastic(2), duration: 1000}),
+      Animated.timing(opacity, {toValue: 1, delay: item.itemIndex * 100, duration: 1000}),
+    ])
+    .start()
+  }
+
+  deckAnimateOnPress(title, image, item) {
+    const { paddingTop, paddingBottom } = this.state;
+    Animated.parallel([
+      Animated.spring(paddingTop, { toValue: 20, bounciness: 12, speed: 50}),
+      Animated.spring(paddingBottom, { toValue: 20, bounciness: 16, speed: 50})
     ]).start(() => {
-      this.setState({rotateX: new Animated.Value(0), opacity: new Animated.Value(1)});
-      this.props.ondeckSelected(title);
+      paddingTop.setValue(0);
+      paddingBottom.setValue(0);
+      this.props.onDeckSelected(title, image, item);
     })
   }
 
   render() {
-    const {item, deckAmount} = this.props;
-    const resizeMode = 'center';
-    const backImage = require(`../assets/back01.png`);
-    console.log("====>", backImage);
+    const {item} = this.props;
+    const backgroundColor = colors.CARDS_COLORS[item.itemIndex % colors.CARDS_COLORS.length];
+    const { paddingTop, paddingBottom, marginLeft, opacity} = this.state;
     
     return (
-      <TouchableOpacity
-        style={[styles.deck, {backgroundColor: colors.CARDS_COLORS[item.itemIndex]}]}
-        onPress={() => this.deckSelected(item.title)}>
+      <Animated.View style={{marginLeft, opacity}}>
+        <TouchableOpacity
+          style={[styles.deck, {backgroundColor: backgroundColor}]}
+          onPress={() => this.deckAnimateOnPress(item.title, item.cover, item)}>
 
-        <Animated.View style={{
-          opacity: this.state.opacity,
-          transform: [
-            {
-              rotateX: this.state.rotateX.interpolate({
-                inputRange: [0, 360],
-                outputRange: ['0deg', '360deg']
-              })
-            },
-            {perspective: 1000}
-          ]
-        }}>
-          <Text style={styles.deckTitle}>{item.title}</Text>
-          <Text style={{color: colors.WHITE, opacity: .6}}>{item.questions.length} cards</Text>
-        </Animated.View>
-        <Image
-          style={styles.deckBackground}
-          source={{ uri: `asset:/images/${item.cover}` }}
-        />
-      </TouchableOpacity>
+          <Animated.View style={{
+            paddingTop,
+            paddingBottom,
+          }}>
+            <Text style={styles.deckTitle}>{item.title}</Text>
+            <Text style={{color: colors.WHITE, opacity: .6}}>{item.questions.length} cards</Text>
+          </Animated.View>
+          {item.cover !== "" &&
+            <Image
+              style={styles.deckBackground}
+              source={{uri: item.cover}}
+            />
+          }
+        </TouchableOpacity>
+      </Animated.View>
     )
   }
 }

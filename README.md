@@ -9,6 +9,8 @@ From Udacity Project Details:
 
 ## Usage
 
+This application works fine on Android and IOS platforms.
+
 This assumes that you have Expo installed
 
 ```bash
@@ -21,5 +23,10 @@ or
 npm install
 npm start
 ```
+
+## Extra Features
+- Progress Bar when the user starts a Quiz
+- Delete deck option
+- Loader (ActivityIndicator) when fetching all decks
 
 This project was created with [Create React Native App](https://github.com/react-community/create-react-native-app).

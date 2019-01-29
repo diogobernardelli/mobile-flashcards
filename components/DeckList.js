@@ -1,27 +1,39 @@
 import React, { Component } from 'react';
-import { FlatList, View, Text } from 'react-native';
+import { FlatList, View, Text, ActivityIndicator } from 'react-native';
 import { styles } from '../helpers/styles';
 import { connect } from 'react-redux';
-import { getDecks } from '../helpers/functions';
+import { getDecks } from '../helpers/api';
 import { receiveDecks } from '../actions';
 import DeckItem from './DeckItem';
 
 class DeckList extends Component {
-  componentDidMount() {
-    const {dispatch} = this.props;
-
-    getDecks().then((decks) => dispatch(receiveDecks(decks)));
+  state = {
+    ready: false
   }
 
-  deckSelected = (title) => {
+  componentDidMount() {
+    const {dispatch} = this.props;
+    
+    getDecks()
+      .then((results) => dispatch(receiveDecks(results)))
+      setTimeout(() => {
+        this.setState(() => ({ready: true}))
+      }, 1500);
+  }
+
+  deckSelected = (title, image, deck) => {
     this.props.navigation.navigate(
       'Deck',
-      {deckId: title}
+      {
+        deckId: title,
+        deckCover: image,
+        deck: deck
+      }
     )
   }
 
-  decksAmount = () => {
-    return Object.keys(this.props.decks).length;
+  decksAmount = (toCount) => {
+    return Object.keys(toCount).length;
   }
 
   renderItem = ({item}) => {
@@ -32,7 +44,6 @@ class DeckList extends Component {
 
   render() {
     const {decks} = this.props;
-    const decksAmount = Object.keys(decks).length;
 
     const deckList = Object.entries(decks).map(
       (deck, index) => {
@@ -42,8 +53,22 @@ class DeckList extends Component {
 
     return (
       <View style={styles.container}>
-        <Text style={styles.title}>Select a Deck</Text>
-        <FlatList data={deckList} renderItem={this.renderItem}/>
+        {this.state.ready
+        ?
+        <View style={{flex: 1}}>
+          {(this.decksAmount(decks) !== 0)
+          ?
+          <View>
+            <Text style={styles.title}>Select a Deck</Text>
+            <FlatList data={deckList} ready={this.state.ready} renderItem={this.renderItem}/>
+          </View>
+          :
+          <View style={{flex: 2, justifyContent: 'center', alignItems: 'center'}}>
+            <Text style={styles.title}>Looks like you ran out of decks. Add a new deck to continue</Text>
+          </View>
+          }
+        </View>
+        : <ActivityIndicator size="large" style={styles.loader} />}
       </View>
     )
   }

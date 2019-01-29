@@ -6,6 +6,7 @@ import NewDeck from './components/NewDeck';
 import Deck from './components/Deck';
 import AddCard from './components/AddCard';
 import Quiz from './components/Quiz';
+import StartQuiz from './components/StartQuiz';
 import AppStatusBar from './components/AppStatusBar';
 import { Ionicons } from '@expo/vector-icons';
 import { colors } from './helpers/colors';
@@ -34,70 +35,82 @@ export default class App extends React.Component {
 
 const Tabs = TabNavigator({
   DeckList: {
-      screen: DeckList,
-      navigationOptions: {
-          tabBarLabel: 'Deck list',
-          tabBarIcon: <Ionicons size={25} name="ios-albums-outline"/>
-      }
+		screen: DeckList,
+		navigationOptions: {
+			tabBarLabel: 'Deck list',
+			tabBarIcon: ({ tintColor }) => <Ionicons size={25} style={{width: 25}} color={tintColor} name="ios-albums"/>
+		}
   },
   NewDeck: {
-      screen: NewDeck,
-      navigationOptions: {
-          tabBarLabel: 'New deck',
-          tabBarIcon: <Ionicons size={25} name="ios-add-circle-outline"/>
-      }
+		screen: NewDeck,
+		navigationOptions: {
+			tabBarLabel: 'New deck',
+			tabBarIcon: ({ tintColor }) => <Ionicons size={25} style={{width: 25}} color={tintColor} name="ios-add-circle"/>
+		}
   }
 }, {
   tabBarOptions: {
-      labelStyle: {
-          fontSize: 14
-      },
-      style: {
-          height: 56,
-          backgroundColor: Platform.OS === 'ios' ? colors.WHITE : colors.ASPHALT,
-          shadowColor: 'rgba(0, 0, 0, 0.24)',
-          shadowOffset: {
-              width: 0,
-              height: 3
-          },
-          shadowRadius: 6,
-          shadowOpacity: 1
-      }
+		activeTintColor: colors.YELLOW_GREEN,
+		inactiveTintColor: colors.WHITE,
+		labelStyle: {
+			fontSize: 14,
+		},
+		style: {
+			height: 56,
+			backgroundColor: Platform.OS === 'ios' ? colors.ASPHALT : colors.ASPHALT,
+			shadowColor: 'rgba(0, 0, 0, 0.24)',
+			paddingTop: Platform.OS === 'ios' ? 10 : 0 ,
+			shadowOffset: {
+				width: 0,
+				height: 3
+			},
+			shadowRadius: 6,
+			shadowOpacity: 1
+		}
   }
 });
 
 const AppNavigation = StackNavigator({
   Home: {
-      screen: Tabs,
-      navigationOptions: {
-          header: null
-      }
+		screen: Tabs,
+		navigationOptions: {
+			header: null
+		}
   },
   Deck: {
-      screen: Deck,
-      navigationOptions: {
-          headerTintColor: colors.WHITE,
-          headerStyle: {
-              backgroundColor: colors.ASPHALT,
-          }
-      }
+		screen: Deck,
+		navigationOptions: {
+			headerTintColor: colors.WHITE,
+			headerStyle: {
+				backgroundColor: colors.ASPHALT,
+			}
+		}
   },
   AddCard: {
-      screen: AddCard,
-      navigationOptions: {
-          headerTintColor: colors.WHITE,
-          headerStyle: {
-              backgroundColor: colors.ASPHALT,
-          }
-      }
+		screen: AddCard,
+		navigationOptions: {
+			headerTintColor: colors.WHITE,
+			headerStyle: {
+				backgroundColor: colors.ASPHALT,
+			}
+		}
   },
   Quiz: {
-      screen: Quiz,
-      navigationOptions: {
-          headerTintColor: colors.WHITE,
-          headerStyle: {
-              backgroundColor: colors.ASPHALT,
-          }
-      }
+		screen: Quiz,
+		navigationOptions: {
+			headerTintColor: colors.WHITE,
+			headerStyle: {
+				backgroundColor: colors.ASPHALT,
+			}
+		}
+  },
+  StartQuiz: {
+		screen: StartQuiz,
+		navigationOptions: {
+			headerTintColor: colors.WHITE,
+			headerStyle: {
+				backgroundColor: colors.ASPHALT,
+			}
+		}
   }
 });
