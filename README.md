@@ -42,36 +42,36 @@ After the installation is complete, open the app and read the following **QR Cod
 
 ## App Screens
 
-<div style="display: inline-block; width: 28%; margin: 0 2% 40px 1%;">
-<img src="https://i.ibb.co/HFKPN7b/01.jpg" style="width: 100%;">
+<div style="display: inline-block; width: 190px; margin: 0 10px 40px">
+<img src="https://i.ibb.co/HFKPN7b/01.jpg" style="width: 190px;">
 </div>
 
-<div style="display: inline-block; width: 28%; margin: 0 2% 40px 1%;">
-<img src="https://i.ibb.co/dWVx5pC/02.jpg" style="width: 100%;">
+<div style="display: inline-block; width: 190px; margin: 0 10px 40px">
+<img src="https://i.ibb.co/dWVx5pC/02.jpg" style="width: 190px;">
 </div>
 
-<div style="display: inline-block; width: 28%; margin: 0 2% 40px 1%;">
-<img src="https://i.ibb.co/ngvyJVK/03.jpg" style="width: 100%;">
+<div style="display: inline-block; width: 190px; margin: 0 10px 40px">
+<img src="https://i.ibb.co/ngvyJVK/03.jpg" style="width: 190px;">
 </div>
 
-<div style="display: inline-block; width: 28%; margin: 0 2% 40px 1%;">
-<img src="https://i.ibb.co/NY0psf0/04.jpg" style="width: 100%;">
+<div style="display: inline-block; width: 190px; margin: 0 10px 40px">
+<img src="https://i.ibb.co/NY0psf0/04.jpg" style="width: 190px;">
 </div>
 
-<div style="display: inline-block; width: 28%; margin: 0 2% 40px 1%;">
-<img src="https://i.ibb.co/RjLyw6y/05.jpg" style="width: 100%;">
+<div style="display: inline-block; width: 190px; margin: 0 10px 40px">
+<img src="https://i.ibb.co/RjLyw6y/05.jpg" style="width: 190px;">
 </div>
 
-<div style="display: inline-block; width: 28%; margin: 0 2% 40px 1%;">
-<img src="https://i.ibb.co/ft0Mk8L/06.jpg" style="width: 100%;">
+<div style="display: inline-block; width: 190px; margin: 0 10px 40px">
+<img src="https://i.ibb.co/ft0Mk8L/06.jpg" style="width: 190px;">
 </div>
 
-<div style="display: inline-block; width: 28%; margin: 0 2% 40px 1%;">
-<img src="https://i.ibb.co/VTgk84T/07.jpg" style="width: 100%;">
+<div style="display: inline-block; width: 190px; margin: 0 10px 40px">
+<img src="https://i.ibb.co/VTgk84T/07.jpg" style="width: 190px;">
 </div>
 
-<div style="display: inline-block; width: 28%; margin: 0 2% 40px 1%;">
-<img src="https://i.ibb.co/RpGR4W0/08.jpg" style="width: 100%;">
+<div style="display: inline-block; width: 190px; margin: 0 10px 40px">
+<img src="https://i.ibb.co/RpGR4W0/08.jpg" style="width: 190px;">
 </div>
 
 
