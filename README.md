@@ -43,28 +43,28 @@ After the installation is complete, open the app and read the following **QR Cod
 ## App Screens
 
 
-<img src="https://i.ibb.co/HFKPN7b/01.jpg" style="width: 190px; margin: 0 10px 30px 10px;">
+<img src="https://i.ibb.co/HFKPN7b/01.jpg" width=240>
 
 
-<img src="https://i.ibb.co/dWVx5pC/02.jpg" style="width: 190px; margin: 0 10px 30px 10px;">
+<img src="https://i.ibb.co/dWVx5pC/02.jpg" width=240>
 
 
-<img src="https://i.ibb.co/ngvyJVK/03.jpg" style="width: 190px; margin: 0 10px 30px 10px;">
+<img src="https://i.ibb.co/ngvyJVK/03.jpg" width=240>
 
 
-<img src="https://i.ibb.co/NY0psf0/04.jpg" style="width: 190px; margin: 0 10px 30px 10px;">
+<img src="https://i.ibb.co/NY0psf0/04.jpg" width=240>
 
 
-<img src="https://i.ibb.co/RjLyw6y/05.jpg" style="width: 190px; margin: 0 10px 30px 10px;">
+<img src="https://i.ibb.co/RjLyw6y/05.jpg" width=240>
 
 
-<img src="https://i.ibb.co/ft0Mk8L/06.jpg" style="width: 190px; margin: 0 10px 30px 10px;">
+<img src="https://i.ibb.co/ft0Mk8L/06.jpg" width=240>
 
 
-<img src="https://i.ibb.co/VTgk84T/07.jpg" style="width: 190px; margin: 0 10px 30px 10px;">
+<img src="https://i.ibb.co/VTgk84T/07.jpg" width=240>
 
 
-<img src="https://i.ibb.co/RpGR4W0/08.jpg" style="width: 190px; margin: 0 10px 30px 10px;">
+<img src="https://i.ibb.co/RpGR4W0/08.jpg" width=240>
 
 
 ## Extra Features
